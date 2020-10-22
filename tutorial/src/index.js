@@ -24,7 +24,10 @@ function BookList(){
     img={firstBook.img}
     title={firstBook.title}
     author={firstBook.author}
-    />
+    >
+      <p>Get code examples like "phpMyAdmin tried to connect to the MySQL server, and the server rejected the connection. ... You should check the host, username and password in your configuration and make sure that they correspond to the information given by the administrator of the MySQL server.</p>
+    </Book>
+
     <Book 
     img={secondBook.img}
     title={secondBook.title}
@@ -35,13 +38,14 @@ function BookList(){
 }
 
 
-const Book = ({img, title, author}) =>{
+const Book = ({img, title, author, children}) =>{
   // const {img, title, author} = props;
   return (
    <article className='book'>
      <img src={img} alt='' />
     <h1>{title}</h1>
     <h4>{author}</h4>
+    {children}
   </article>
   );
 };
