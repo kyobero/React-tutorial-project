@@ -32,7 +32,7 @@ const books = [
 function BookList() {
   return (
   <section className='booklist'>
-    {books.map((book, index)=> {
+    {books.map((book)=> {
       return  <Book key={book.id} {...book}></Book>;
     
   })}
@@ -43,12 +43,17 @@ function BookList() {
 
 const Book = ({img, title, author}) =>{
   // const {img, title, author} = props;
-  // console.log(props);
+  // attribute, eventHandler
+  // onClick, onMoueOver
+  const clickHandler = () => {
+    alert('hello world');
+  };
   return (
    <article className='book'>
      <img src={img} alt='' />
-    <h1>{title}</h1>
+    <h1 onClick={() => console.log(title)}>{title}</h1>
     <h4>{author}</h4>
+    <button type='button' onClick={clickHandler}>reference example</button>
   </article>
   );
 };
